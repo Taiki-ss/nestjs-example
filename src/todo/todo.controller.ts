@@ -19,7 +19,7 @@ export class TodoController {
 
   @Post('')
   async add(@Body() task: CreateTaskDto) {
-    const result = await this.prisma.task.create({ data: task });
+    await this.prisma.task.create({ data: task });
     return { status: 'OK' };
   }
 
